@@ -42,15 +42,11 @@ code { padding: .12em .35em; border-radius: 5px; background: #edf2fb; color: var
 .site-header.scrolled { color: var(--ink); background: rgba(255, 255, 255, .92); border-color: var(--line); backdrop-filter: blur(16px); }
 .nav-wrap { height: 76px; display: flex; align-items: center; justify-content: space-between; }
 .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; line-height: 1.15; }
-.brand-mark {
-  display: grid;
-  place-items: center;
+.brand-logo {
   width: 42px;
   height: 42px;
-  border: 1px solid currentColor;
+  object-fit: contain;
   border-radius: 50%;
-  font-weight: 800;
-  font-size: .82rem;
 }
 .brand strong, .brand small { display: block; }
 .brand small { margin-top: 4px; opacity: .72; }
