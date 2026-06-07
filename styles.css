@@ -331,3 +331,59 @@ footer a { color: var(--lime); }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
 }
+
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #102136 !important;
+  }
+  .site-header,
+  .skip-link,
+  .hero-actions,
+  .nav-toggle,
+  .lightbox,
+  .lightbox-close,
+  .button.ghost {
+    display: none !important;
+  }
+  .button.primary {
+    background: #b9df52 !important;
+    color: #0c2c7c !important;
+    border-color: #b9df52 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .section {
+    padding-block: 30px !important;
+  }
+  .project, .about-grid, .competency-grid, .timeline, .compare-cards {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .about-card, .info-list, .competency, .compare-cards > div, .table-wrap {
+    box-shadow: none !important;
+    border: 1px solid var(--line) !important;
+    background: var(--white) !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .hero {
+    background: linear-gradient(135deg, #081b4e 0%, #0b3bb1 58%, #096ba3 100%) !important;
+    color: #ffffff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .hero-band {
+    background: var(--lime) !important;
+    color: var(--blue-dark) !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .monogram {
+    background: linear-gradient(135deg, var(--blue), var(--cyan)) !important;
+    color: #ffffff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
