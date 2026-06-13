@@ -30,7 +30,7 @@ body.menu-open { overflow: hidden; }
 a { color: inherit; text-decoration: none; }
 img { display: block; max-width: 100%; }
 button { color: inherit; font: inherit; }
-em { color: var(--blue); font-family: inherit; font-style: italic; font-weight: 520; }
+em { color: var(--blue); font-family: inherit; font-style: normal; font-weight: 650; letter-spacing: normal; }
 .shell { width: min(1180px, calc(100% - 48px)); margin-inline: auto; }
 .content-section { position: relative; padding: 130px 0; }
 .tint-section { background: #e9eff4; }
@@ -173,7 +173,7 @@ em { color: var(--blue); font-family: inherit; font-style: italic; font-weight: 
   font-size: clamp(2.6rem, 5.4vw, 5.4rem);
   font-weight: 780;
   line-height: .98;
-  letter-spacing: -.075em;
+  letter-spacing: -.02em;
 }
 .section-intro p:last-child { max-width: 650px; margin-top: 24px; color: var(--muted); }
 .dark-section .section-intro p:last-child { color: #9dafc8; }
