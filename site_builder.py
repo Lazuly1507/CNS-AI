@@ -651,7 +651,7 @@ def project_page(project, index):
       <div class="shell"><div class="section-intro reveal"><p class="eyebrow">Kết quả & phân tích</p><h2>Điều nổi bật sau<br><em>quá trình thực hiện.</em></h2></div>{table}<div class="insight-grid">{cards(project['results'])}</div>{special}</div>
     </section>
     {online_report(project)}
-    <section class="content-section lesson-section"><div class="shell lesson-card reveal"><span>Bài học cá nhân</span><blockquote>{escape(project['lesson'])}</blockquote><a class="button primary magnetic" href="../deliverables/Google-Drive-PDF/{project['pdf']}" target="_blank" rel="noopener">Đọc báo cáo đầy đủ ↗</a></div></section>
+    <section class="content-section lesson-section" id="bai-hoc"><div class="shell lesson-card reveal"><span>Bài học cá nhân</span><blockquote>{escape(project['lesson'])}</blockquote><a class="button primary magnetic" href="../deliverables/Google-Drive-PDF/{project['pdf']}" target="_blank" rel="noopener">Đọc báo cáo đầy đủ ↗</a></div></section>
     <nav class="case-pagination shell">{prev_link}{next_link}</nav>
     """
     return doc(f"{project['code']} · {project['title']}", body, prefix, "projects", project["summary"])
