@@ -37,3 +37,22 @@ lightbox.querySelector(".lightbox-close").addEventListener("click", () => lightb
 lightbox.addEventListener("click", (event) => {
   if (event.target === lightbox) lightbox.close();
 });
+
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const revealItems = document.querySelectorAll(".reveal");
+
+if ("IntersectionObserver" in window && !reducedMotion) {
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("visible");
+      revealObserver.unobserve(entry.target);
+    });
+  }, { threshold: 0.1, rootMargin: "0px 0px -35px" });
+
+  revealItems.forEach((item) => revealObserver.observe(item));
+} else {
+  revealItems.forEach((item) => item.classList.add("visible"));
+}
+
+window.setTimeout(() => revealItems.forEach((item) => item.classList.add("visible")), 1400);

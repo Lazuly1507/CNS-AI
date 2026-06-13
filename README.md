@@ -1,42 +1,51 @@
 # Portfolio Năng lực số và Trí tuệ nhân tạo
 
-Google Sites không cho tải trực tiếp một thư mục HTML để chạy như website. Cách ổn định nhất là xuất bản thư mục này bằng một dịch vụ hosting tĩnh, sau đó nhúng URL vào Google Sites.
+Website portfolio của Nguyễn Ngọc Hiếu cho học phần **Nhập môn Công nghệ số và Ứng dụng Trí tuệ nhân tạo** tại VNU-UET.
 
-## Cấu trúc thư mục
+## Cấu trúc website
 
-- `index.html`
-- `styles.css`
-- `script.js`
-- Thư mục `assets`
-- `reports/`: bảy báo cáo DOCX nguồn để tiếp tục chỉnh sửa
-- `documents/`: đề bài, rubric và tài liệu tham khảo
-- `archive/`: bản sao lưu, không cần đưa lên hosting
-- `deliverables/`: gói ZIP hoàn chỉnh để bàn giao hoặc tải lên hosting
-- `deliverables/Google-Drive-PDF/`: bảy báo cáo PDF cuối để tải lên Google Drive
-- `tools/`: công cụ tạo, chuẩn hóa và xuất PDF báo cáo
+- `index.html`: trang chủ gốc, giữ nguyên ngoại hình của bản đã xuất PDF.
+- `styles.css`, `script.js`: giao diện và hành vi của trang chủ.
+- `pages/b1.html` đến `pages/b7.html`: bảy trang case study chi tiết.
+- Mỗi trang B1–B7 có bản báo cáo trực tuyến đầy đủ; ảnh minh chứng được đặt ngay cạnh nội dung liên quan, kèm bảng dữ liệu và PDF đính kèm.
+- `pages/tong-ket.html`: cảm nghĩ và tổng kết học phần.
+- `portfolio.css`, `portfolio.js`: giao diện, chuyển cảnh và hiệu ứng của các trang chi tiết.
+- `assets/`: ảnh đại diện và ảnh minh chứng.
+- `deliverables/Google-Drive-PDF/`: bảy báo cáo PDF đi kèm.
+- `reports/`: các báo cáo DOCX nguồn để tiếp tục chỉnh sửa.
+- `site_builder.py`: sinh lại tám trang chi tiết từ dữ liệu nội dung.
 
-## Ảnh đại diện
+## Chạy thử trên máy
 
-Lưu ảnh chân dung với tên `profile.jpg` tại đường dẫn:
+Tại thư mục dự án:
 
-```text
-assets/profile.jpg
+```powershell
+py -m http.server 8000
 ```
 
-Nếu chưa có ảnh, website sẽ tự hiển thị chữ viết tắt `NH`.
+Sau đó mở `http://localhost:8000`.
 
-## Cách xuất bản đề xuất
+## Xuất bản bằng GitHub Pages
 
-1. Tải bảy PDF trong `deliverables/Google-Drive-PDF/` lên một thư mục Google Drive.
-2. Đặt quyền thư mục thành `Bất kỳ ai có đường liên kết` → `Người xem`.
-3. Thay các liên kết báo cáo trong `index.html` bằng liên kết xem Google Drive của từng PDF.
-4. Tạo repository GitHub và tải `index.html`, `styles.css`, `script.js`, `assets/` và `deliverables/Google-Drive-PDF/` lên. Có thể bỏ thư mục PDF sau khi đã thay đủ liên kết bằng URL Google Drive.
-5. Vào `Settings` → `Pages`.
-6. Chọn `Deploy from a branch`, nhánh `main`, thư mục `/root`.
-7. Sau khi có URL GitHub Pages, mở Google Sites.
-8. Chọn `Insert` → `Embed` → `By URL`, dán URL GitHub Pages.
-9. Kéo khung nhúng đủ rộng và xuất bản Google Site.
+1. Đẩy toàn bộ mã nguồn lên nhánh `main` của repository GitHub.
+2. Mở `Settings` → `Pages`.
+3. Trong `Build and deployment`, chọn `Deploy from a branch`.
+4. Chọn nhánh `main`, thư mục `/root`, sau đó nhấn `Save`.
+5. Website sẽ được xuất bản tại:
 
-Có thể mở trực tiếp `index.html` để xem thử trên máy tính trước khi xuất bản.
+```text
+https://lazuly1507.github.io/CNS-AI/
+```
 
-Chi tiết xem tại `HUONG-DAN-GOOGLE-SITES.md`.
+PDF được phục vụ trực tiếp từ repository và mở trong tab mới. Không cần Google Sites hoặc Google Drive.
+
+## Cập nhật nội dung trang chi tiết
+
+Sửa dữ liệu trong `site_builder.py`, sau đó chạy:
+
+```powershell
+py -m pip install -r requirements.txt
+py site_builder.py
+```
+
+Lệnh này chỉ tạo lại `pages/b1.html` đến `pages/b7.html` và `pages/tong-ket.html`; `index.html` không bị thay đổi.
