@@ -351,7 +351,7 @@ def footer(prefix=""):
     </footer>
     <button class="back-top" aria-label="Lên đầu trang">↑</button>
     <dialog class="lightbox"><button class="lightbox-close" aria-label="Đóng">×</button><img src="" alt=""><p></p></dialog>
-    <script src="{prefix}portfolio.js"></script>"""
+    <script src="{prefix}portfolio.js?v=20260613-2"></script>"""
 
 
 def doc(title, body, prefix="", active="", description="Portfolio học tập về năng lực số và AI."):
@@ -364,7 +364,7 @@ def doc(title, body, prefix="", active="", description="Portfolio học tập v�
   <meta name="theme-color" content="#07101f">
   <title>{escape(title)} | Nguyễn Ngọc Hiếu</title>
   <link rel="icon" href="{prefix}assets/logo.png">
-  <link rel="stylesheet" href="{prefix}portfolio.css">
+  <link rel="stylesheet" href="{prefix}portfolio.css?v=20260613-2">
 </head>
 <body>
 {header(prefix, active)}
